@@ -3,7 +3,7 @@ using ConsoleApp1.Exeptions;
 
 try
 {
-    char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'G' }, { 'C', 'H' }, { 'B', 'D' }, { 'C', 'E' }, { 'E', 'F' } }; // OK
+    char[,] exemplo = { { 'B', 'D' }, { 'D', 'E' }, { 'A', 'B' }, { 'E', 'G' }, { 'A', 'C' }, { 'C', 'F' } }; // OK
     
     Arvore arvore = new Arvore();
 

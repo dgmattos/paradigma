@@ -25,13 +25,32 @@ namespace TestProject1
         [Test]
         public void TESTE_EX2()
         {
+            /*
+             * O exemplo a cima gera a exeção de indice inexistente, uma vez que o C só será adicionado no final da lista.
+                Uma opção para resolver esse problema seria presuimir que se o índice não existe ele é filho do primeiro nó disponível, porém como estrutura de arvore mencionada no exemplo trabalha com pares, entendo que o fato do indice C ainda não existir como filho deve ser interpretado como erro.
+             */
             char[,] exemplo = {{'B','D'},{'D','E'},{'A','B'},{'C','F'},{'E','G'},{'A','C'}}; // OK
 
             Arvore arvore = new Arvore();
 
             string result = arvore.resolver(exemplo);
 
-            Assert.AreEqual("[A[B[G][D]][C[H][E[F]]]]", result);
+            Assert.AreEqual("[A[B[D[E[G]]]][C[F]]]", result);
+        }
+
+        public void TESTE_EX2_CORRIGIDO()
+        {
+            /*
+             * O exemplo a cima gera a exeção de indice inexistente, uma vez que o C só será adicionado no final da lista.
+                Uma opção para resolver esse problema seria presuimir que se o índice não existe ele é filho do primeiro nó disponível, porém como estrutura de arvore mencionada no exemplo trabalha com pares, entendo que o fato do indice C ainda não existir como filho deve ser interpretado como erro.
+             */
+            char[,] exemplo = { { 'B', 'D' }, { 'D', 'E' }, { 'A', 'B' }, { 'E', 'G' }, { 'A', 'C' }, { 'C', 'F' } }; // OK
+
+            Arvore arvore = new Arvore();
+
+            string result = arvore.resolver(exemplo);
+
+            Assert.AreEqual("[A[B[D[E[G]]]][C[F]]]", result);
         }
 
         [Test]
