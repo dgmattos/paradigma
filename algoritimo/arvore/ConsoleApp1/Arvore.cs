@@ -23,21 +23,9 @@ public class Arvore
 
                 this._resolver(itens);
             }
-            catch (E1 ex)
-            {
-                this.erro = ex.Message;
-            }
-            catch (E2 ex)
-            {
-                this.erro = ex.Message;
-            }
-            catch (E3 ex)
-            {
-                this.erro = ex.Message;
-            }
             catch (Exception ex)
             {
-                this.erro = "Qualquer outro erro";
+                this.erro = ex.Message;
             }
 
             if (!string.IsNullOrEmpty(this.erro))
