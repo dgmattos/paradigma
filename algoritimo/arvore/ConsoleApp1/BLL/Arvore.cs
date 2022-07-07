@@ -45,7 +45,7 @@ public class Arvore
     }
 
     /// <summary>
-    /// Resolva a lista de itens
+    /// Resolve a lista de itens
     /// </summary>
     /// <param name="itens"></param>
     private void _resolver(char[,] itens)
