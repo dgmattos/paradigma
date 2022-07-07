@@ -11,9 +11,21 @@ namespace TestProject1
         }
 
         [Test]
-        public void TESTE_OK()
+        public void TESTE_EX1()
         {
             char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'G' }, { 'C', 'H' }, { 'B', 'D' }, { 'C', 'E' }, { 'E', 'F' } }; // OK
+
+            Arvore arvore = new Arvore();
+
+            string result = arvore.resolver(exemplo);
+
+            Assert.AreEqual("[A[B[G][D]][C[H][E[F]]]]", result);
+        }
+
+        [Test]
+        public void TESTE_EX2()
+        {
+            char[,] exemplo = {{'B','D'},{'D','E'},{'A','B'},{'C','F'},{'E','G'},{'A','C'}}; // OK
 
             Arvore arvore = new Arvore();
 
@@ -49,7 +61,6 @@ namespace TestProject1
         [Test]
         public void TESTE_E3()
         {
-            //[A,B] [A,C] [B,D] [D,C]
             char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'D' }, { 'D', 'C' } }; // OK
 
             Arvore arvore = new Arvore();
