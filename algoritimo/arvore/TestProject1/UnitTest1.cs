@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using ConsoleApp1;
+using ConsoleApp1.BLL;
 
 namespace TestProject1
 {

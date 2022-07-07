@@ -1,4 +1,4 @@
-﻿using ConsoleApp1;
+﻿using ConsoleApp1.BLL;
 using ConsoleApp1.Exeptions;
 
 try

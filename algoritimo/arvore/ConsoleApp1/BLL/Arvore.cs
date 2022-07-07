@@ -1,6 +1,6 @@
 ﻿using ConsoleApp1.Exeptions;
 
-namespace ConsoleApp1;
+namespace ConsoleApp1.BLL;
 
 public class Arvore
 {
@@ -10,9 +10,10 @@ public class Arvore
 
     public Arvore()
     {
-        
+
     }
 
+    
     public string resolver(char[,] itens)
     {
         try
@@ -21,19 +22,19 @@ public class Arvore
             {
                 raiz = new No();
 
-                this._resolver(itens);
+                _resolver(itens);
             }
             catch (Exception ex)
             {
-                this.erro = ex.Message;
+                erro = ex.Message;
             }
 
-            if (!string.IsNullOrEmpty(this.erro))
+            if (!string.IsNullOrEmpty(erro))
             {
-                throw new Exception(this.erro);
+                throw new Exception(erro);
             }
 
-            string res = this.raiz.toString();
+            string res = raiz.toString();
 
             return res;
         }
@@ -43,13 +44,17 @@ public class Arvore
         }
     }
 
+    /// <summary>
+    /// Resolva a lista de itens
+    /// </summary>
+    /// <param name="itens"></param>
     private void _resolver(char[,] itens)
     {
         try
         {
-           
+
             int linhas = itens.Length / 2;
-            
+
             for (int i = 0; i < linhas; i++)
             {
                 char itemPai = itens[i, 0];
@@ -59,6 +64,7 @@ public class Arvore
                 if (raiz.chave == null)
                 {
                     raiz = new No(itemPai);
+
                     raiz.Adiciona(itemPai, itemFilho);
                 }
                 else
@@ -77,7 +83,7 @@ public class Arvore
     {
         try
         {
-            if (!string.IsNullOrEmpty(this.erro))
+            if (!string.IsNullOrEmpty(erro))
             {
                 return erro;
             }
