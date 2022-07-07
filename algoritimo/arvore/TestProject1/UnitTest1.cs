@@ -29,7 +29,7 @@ namespace TestProject1
              * O exemplo a cima gera a exeção de indice inexistente, uma vez que o C só será adicionado no final da lista.
                 Uma opção para resolver esse problema seria presuimir que se o índice não existe ele é filho do primeiro nó disponível, porém como estrutura de arvore mencionada no exemplo trabalha com pares, entendo que o fato do indice C ainda não existir como filho deve ser interpretado como erro.
              */
-            char[,] exemplo = {{'B','D'},{'D','E'},{'A','B'},{'C','F'},{'E','G'},{'A','C'}}; // OK
+            char[,] exemplo = { { 'B', 'D' }, { 'D', 'E' }, { 'A', 'B' }, { 'C', 'F' }, { 'E', 'G' }, { 'A', 'C' } }; // OK
 
             Arvore arvore = new Arvore();
 
@@ -92,7 +92,7 @@ namespace TestProject1
         [Test]
         public void TESTE_E4()
         {
-            char[,] exemplo = {  }; // OK
+            char[,] exemplo = { }; // OK
 
             Arvore arvore = new Arvore();
 
