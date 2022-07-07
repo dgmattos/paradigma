@@ -18,16 +18,9 @@ public class Arvore
     {
         try
         {
-            try
-            {
-                raiz = new No();
+            raiz = new No();
 
-                _resolver(itens);
-            }
-            catch (Exception ex)
-            {
-                erro = ex.Message;
-            }
+            _resolver(itens);
 
             if (!string.IsNullOrEmpty(erro))
             {
@@ -38,10 +31,12 @@ public class Arvore
 
             return res;
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            return e.Message;
+            erro = ex.Message;
         }
+
+        return this.erro;
     }
 
     /// <summary>
@@ -64,12 +59,24 @@ public class Arvore
                 if (raiz.chave == null)
                 {
                     raiz = new No(itemPai);
-
                     raiz.Adiciona(itemPai, itemFilho);
                 }
                 else
                 {
-                    raiz.Adiciona(itemPai, itemFilho);
+                    if (itemPai < raiz.chave)
+                    {
+                        No novaEsquerda = raiz;
+
+                        raiz = new No(itemPai);
+
+                        raiz.esquerda = novaEsquerda;
+                    }
+                    else
+                    {
+                        raiz.Adiciona(itemPai, itemFilho);
+                    }
+
+                    
                 }
             }
         }

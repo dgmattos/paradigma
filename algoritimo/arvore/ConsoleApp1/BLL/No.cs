@@ -70,7 +70,7 @@ public class No
         {
             if (filho == esquerda.chave || filho == direita.chave)
             {
-                throw new E2();
+                throw new E3();
             }
 
             if (esquerda.chave == pai)
@@ -91,7 +91,7 @@ public class No
             }
             else
             {
-                throw new E3();
+                throw new E4("Indice não existe na arvore");
             }
         }
         catch (Exception e)
@@ -127,8 +127,9 @@ public class No
                 return direita._eFilho(pai);
             }
 
-            return false;
         }
+
+        return false;
     }
 
     /// <summary>

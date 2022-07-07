@@ -11,6 +11,12 @@ public class E4 : Exception
             
     }
 
+    public E4(string message)
+        : base("E4: Qualquer outro erro: "+message)
+    {
+
+    }
+
     public E4(Exception inner)
     :base("E4: Qualquer outro erro", inner)
     {

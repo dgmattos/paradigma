@@ -37,7 +37,7 @@ namespace TestProject1
         [Test]
         public void TESTE_E2()
         {
-            char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'G' }, { 'C', 'H' }, { 'H', 'C' }, { 'B', 'D' }, { 'C', 'E' }, { 'E', 'F' } }; // OK
+            char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'C', 'A' } }; // OK
 
             Arvore arvore = new Arvore();
 
@@ -49,7 +49,8 @@ namespace TestProject1
         [Test]
         public void TESTE_E3()
         {
-            char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'G' }, { 'C', 'H' }, { 'B', 'D' }, { 'E', 'F' }, { 'C', 'E' } }; // OK
+            //[A,B] [A,C] [B,D] [D,C]
+            char[,] exemplo = { { 'A', 'B' }, { 'A', 'C' }, { 'B', 'D' }, { 'D', 'C' } }; // OK
 
             Arvore arvore = new Arvore();
 
